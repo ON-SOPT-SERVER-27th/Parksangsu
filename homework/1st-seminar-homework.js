@@ -1,1 +1,1 @@
-열심히 공부해야지 
+const member = require("member");
