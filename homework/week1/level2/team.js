@@ -35,3 +35,8 @@ const teamMembers = [{
         취미: "사진찍기"
     }
 ];
+
+
+const getTeamMembers = teamMembers.filter(
+    (member) => console.log(member)
+);
