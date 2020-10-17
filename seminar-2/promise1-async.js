@@ -1,4 +1,4 @@
-const 자퇴 = "?"
+const 자퇴 = true
 const middleSchool = () => new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(`중학교`);
