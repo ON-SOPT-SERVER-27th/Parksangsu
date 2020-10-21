@@ -58,7 +58,8 @@ V8에서 Javascript 컴파일 과정은 다음과 같다.
 
 위 과정을 영상을 통해 자세히 설명하고 있다. 
 
-[https://youtu.be/r5OWCtuKiAk](https://youtu.be/r5OWCtuKiAk)
+[![v8](https://youtu.be/r5OWCtuKiAk]](https://youtu.be/r5OWCtuKiAk)
+
 
 # V8 Scanner 와 Token
 
@@ -85,9 +86,6 @@ AST(Abstract Syntax Tree)는 코드를 구조화된 트리로 만들어, 컴파�
 AST란 소스코드를 트리로 만든 구조체이며, 보통 컴파일러에서 사용한다.
 
 [추상 구문 트리](https://ko.wikipedia.org/wiki/%EC%B6%94%EC%83%81_%EA%B5%AC%EB%AC%B8_%ED%8A%B8%EB%A6%AC)
-
-
-- 계속 정리중..
 
 출처 : [V8 에서 Javascript 코드를 실행하는 방법 정리해보기](https://medium.com/@pks2974/v8-%EC%97%90%EC%84%9C-javascript-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%B4%EA%B8%B0-25837f61f551)
 
