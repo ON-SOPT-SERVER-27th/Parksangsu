@@ -58,7 +58,7 @@ V8에서 Javascript 컴파일 과정은 다음과 같다.
 
 위 과정을 영상을 통해 자세히 설명하고 있다. 
 
-[![v8](https://youtu.be/r5OWCtuKiAk)](https://youtu.be/r5OWCtuKiAk)
+[![v8](https://youtu.be/r5OWCtuKiAk/1.jpg)](https://youtu.be/r5OWCtuKiAk)
 
 
 # V8 Scanner 와 Token
