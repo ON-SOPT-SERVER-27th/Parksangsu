@@ -6,6 +6,25 @@
 
 # 2주차 세미나 과제 진행 중
 
+1. [NodeJS란 무엇인가](#nodejs-is) (작성자: 김민지)
+2. [NodeJS의 장단점](#characteristics) (작성자: 신연상)   
+3. [NodeJS와 다른 프레임워크 비교](#another) (작성자: 강준우)
+4. [NodeJS 모듈](#module) (작성자: 김지현)
+5. [NodeJS 엔진](#engine) (작성자: 박상수)
+6. [NodeJS 사용시 주의사항](#notice) (작성자: 한수아) 
+
+
+
+## 1. NodeJS란 <a name="nodejs-is"></a>
+의
+## 2. NodeJS의 장단점 <a name="characteristics"></a>
+
+## 3. NodeJS와 다른 프레임워크 비교 <a name="another"></a>
+
+## 4. NodeJS 모듈 <a name="module"></a>
+
+## 5. NodeJS 엔진 <a name="engine"></a>
+
 # V8의 특징
 
 V8 엔진은 C++로 작성 되었으며, ECMA-262에 기재된 ECMAScript 및 WebAssembly를 처리할 수 있다.
@@ -88,5 +107,13 @@ AST란 소스코드를 트리로 만든 구조체이며, 보통 컴파일러에�
 [추상 구문 트리](https://ko.wikipedia.org/wiki/%EC%B6%94%EC%83%81_%EA%B5%AC%EB%AC%B8_%ED%8A%B8%EB%A6%AC)
 
 출처 : [V8 에서 Javascript 코드를 실행하는 방법 정리해보기](https://medium.com/@pks2974/v8-%EC%97%90%EC%84%9C-javascript-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%B4%EA%B8%B0-25837f61f551)
+
+
+
+
+## 6. NodeJS 사용시 주의사항 <a name="notice"></a>
+
+
+
 
 
