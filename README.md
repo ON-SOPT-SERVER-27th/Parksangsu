@@ -16,7 +16,7 @@
 
 
 ## 1. NodeJS란 <a name="nodejs-is"></a>
-의
+
 ## 2. NodeJS의 장단점 <a name="characteristics"></a>
 
 ## 3. NodeJS와 다른 프레임워크 비교 <a name="another"></a>
@@ -41,6 +41,8 @@ V8은 아래 특징을 지닌다.
 - Hidden Class를 이용해 빠르게 프로퍼티에 접근한다.
 - TurboFan을 이용해 최적화된 코드로 만들어 속도 및 메모리를 최적화한다.
 
+--- 
+
 ### JIT Compiler
 
 Javascript는 보통 js 파일 (text)로 배포되고, 이를 브라우저에서 사용한다. 
@@ -56,6 +58,8 @@ V8에서는 먼저 Javascript 코드를 Interpreter 방식으로 Compile 하고,
 그리고 Compile 속도를 높이기 위해, 이 ByteCode를 캐싱해두고, 자주 쓰이는 코드를 인라인 캐싱과 같은 **최적화** 기법으로 최적화한 후, 이후에 Compile할 시에 참조하여 속도를 높인다. 
 
 이러한 방식을 **JIT (Just-In-Time) Compiler**이라고 하며, Interpreter의 느린 실행 속도를 개선할 수 있다.
+
+---
 
 ### V8 컴파일 과정
 
@@ -79,6 +83,7 @@ V8에서 Javascript 컴파일 과정은 다음과 같다.
 
 [[참고](https://youtu.be/r5OWCtuKiAk/)](https://youtu.be/r5OWCtuKiAk)
 
+---
 
 ### V8 Scanner 와 Token
 
@@ -96,6 +101,8 @@ V8에서는 이 Text 정보를 Parsing 하기 전에, 일정한 형태의 UTF-16
 
 Scanner 단계에서 속도를 올리기 위해서는 소스 코드를 축소하고, 불필요한 공백이나 주석을 제거하고, 비 ASCII 식별자를 피하는 것이 좋다. 
 
+---
+
 ### V8 Parser와 AST
 
 Parser는 Token을 가지고, 컴파일러(Ignition)가 사용할 AST를 생성한다.
@@ -108,7 +115,7 @@ AST란 소스코드를 트리로 만든 구조체이며, 보통 컴파일러에�
 
 출처 : [V8 에서 Javascript 코드를 실행하는 방법 정리해보기](https://medium.com/@pks2974/v8-%EC%97%90%EC%84%9C-javascript-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%B4%EA%B8%B0-25837f61f551)
 
-
+---
 
 
 ## 6. NodeJS 사용시 주의사항 <a name="notice"></a>
