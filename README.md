@@ -25,7 +25,7 @@
 
 ## 5. NodeJS 엔진 <a name="engine"></a>
 
-# V8의 특징
+### V8의 특징
 
 V8 엔진은 C++로 작성 되었으며, ECMA-262에 기재된 ECMAScript 및 WebAssembly를 처리할 수 있다.
 
@@ -41,7 +41,7 @@ V8은 아래 특징을 지닌다.
 - Hidden Class를 이용해 빠르게 프로퍼티에 접근한다.
 - TurboFan을 이용해 최적화된 코드로 만들어 속도 및 메모리를 최적화한다.
 
-# JIT Compiler
+### JIT Compiler
 
 Javascript는 보통 js 파일 (text)로 배포되고, 이를 브라우저에서 사용한다. 
 
@@ -57,7 +57,7 @@ V8에서는 먼저 Javascript 코드를 Interpreter 방식으로 Compile 하고,
 
 이러한 방식을 **JIT (Just-In-Time) Compiler**이라고 하며, Interpreter의 느린 실행 속도를 개선할 수 있다.
 
-# V8 컴파일 과정
+### V8 컴파일 과정
 
 Javascript도 사람이 읽을 수 있는 코드이기 때문에, 기계가 읽을 수 있도록 기계어로 Compile 해야 한다.
 
@@ -80,7 +80,7 @@ V8에서 Javascript 컴파일 과정은 다음과 같다.
 [[참고](https://youtu.be/r5OWCtuKiAk/)](https://youtu.be/r5OWCtuKiAk)
 
 
-# V8 Scanner 와 Token
+### V8 Scanner 와 Token
 
 Javascript 파일은 Text로 이루어져 있으며, 이를 Network를 통해 다운받는다.
 
@@ -96,7 +96,7 @@ V8에서는 이 Text 정보를 Parsing 하기 전에, 일정한 형태의 UTF-16
 
 Scanner 단계에서 속도를 올리기 위해서는 소스 코드를 축소하고, 불필요한 공백이나 주석을 제거하고, 비 ASCII 식별자를 피하는 것이 좋다. 
 
-# V8 Parser와 AST
+### V8 Parser와 AST
 
 Parser는 Token을 가지고, 컴파일러(Ignition)가 사용할 AST를 생성한다.
 
