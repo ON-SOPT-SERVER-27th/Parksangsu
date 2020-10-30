@@ -9,9 +9,9 @@
 1. [NodeJS란 무엇인가](#nodejs-is) (작성자: 김민지)
 2. [NodeJS의 장단점](#characteristics) (작성자: 신연상)   
 3. [NodeJS와 다른 프레임워크 비교](#another) (작성자: 강준우)
-4. [NodeJS 모듈](#module) (작성자: 김지현)
-5. [NodeJS 엔진](#engine) (작성자: 박상수)
-6. [NodeJS 사용시 주의사항](#notice) (작성자: 한수아) 
+4. [NodeJS 엔진](#engine) (작성자: 김지현)
+5. [NodeJS 컴파일 과정](#compile) (작성자: 박상수)
+6. [NodeJS 사용시 주의사항](#notice) (작성자: 한수아)
 
 
 
@@ -19,20 +19,14 @@
 
 <h2>😮Node.js란 무엇인가</h2>
 
-
-
 노드의 공식 사이트(https://nodejs.org/ko/)에서는 노드를 다음과 같이 설명하고 있습니다.
 <br>
-
-
 
 **Node.js는 크롬 V8 자바스크립트 엔진으로 빌드된 자바스크립트 런타임입니다.**
 
 **Node.js는 이벤트 기반, 논블로킹 I/O 모델을 사용해 가볍고 효율적입니다.**
 
 **Node.js의 패키지 생태계인 npm은 세계에서 가장 큰 오픈 소스 라이브러리 생태계이기도 합니다.**
-
-
 
 <br>
 
@@ -170,6 +164,24 @@
 
 ## 2. NodeJS의 장단점 <a name="characteristics"></a>
 
+> ### 장점
+- Non-blocking I/O와 단일 스레드(Single Thread) 이벤트 루프를 통한 **높은 처리 성능**을 가진다.
+- 개발 언어가 **JavaScript**이기 때문에, 프런트엔드 개발자가 나름 쉽게 백엔드 개발까지 할 수 있다.  
+JavaScript 언어 자체가 **JSON** 을 지원하는 것도 큰 장점이다.
+- 구글의 **V8** JavaScript 엔진을 사용하기 때문에, 구글이 무너지지 않는 한 계속 발전한다(빨라진다).
+- 이 외에 가볍게 돌아가고, 서버 무리가 적고, **npm**(node package manager)을 통해 다양한 패키지를 이용할 수 있다.    
+실제로 굉장히 많은 npm 패키지들(47만개?)과 유저들이 있다.. 앵간한 기능은 이미 npm 패키지로 구현되어 있다고 한다.  
+(2016년 자료긴 하지만 [참고])
+
+> ### 단점
+- 단일 스레드이기 때문에 **한 작업이 시간이 오래 걸리면 전체 성능이 낮아**진다.  
+따라서, 게시판 형태와 같은 가벼운 I/O가 많은 웹서비스에 어울린다고 한다.
+- 이벤트 기반 비동기 방식이라 서버단의 로직이 복잡하면 **Callback Hell**에 빠질 수 있다. (가독성이 떨어진다)
+- 에러가 발생하면 프로세스 자체가 죽어버린다. (주의해야 할 사항)
+
+[참고]: https://blog.npmjs.org/post/143451680695/how-many-npm-users-are-there
+
+
 ## 3. NodeJS와 다른 프레임워크 비교 <a name="another"></a>
 ---
 ### Python 언어 기반
@@ -223,9 +235,9 @@
 
 #### Ref
 * https://www.youtube.com/watch?v=PnhmeFakkXg&ab_channel=%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94NomadCoders
-## 4. NodeJS 모듈 <a name="module"></a>
 
-## 5. NodeJS 엔진 <a name="engine"></a>
+
+## 4. NodeJS 엔진 <a name="engine"></a>
 
 ### V8의 특징
 
@@ -261,7 +273,9 @@ V8에서는 먼저 Javascript 코드를 Interpreter 방식으로 Compile 하고,
 
 이러한 방식을 **JIT (Just-In-Time) Compiler**이라고 하며, Interpreter의 느린 실행 속도를 개선할 수 있다.
 
----
+[[참고](https://youtu.be/r5OWCtuKiAk/)](https://youtu.be/r5OWCtuKiAk)
+
+## 5. NodeJS 컴파일 과정 <a name="compile"></a>
 
 ### V8 컴파일 과정
 
@@ -322,3 +336,32 @@ AST란 소스코드를 트리로 만든 구조체이며, 보통 컴파일러에�
 
 ## 6. NodeJS 사용시 주의사항 <a name="notice"></a>
 
+# Node.js 개발 시 주의사항
+<h3> 1. 이벤트 루프의 블록킹 </h3>
+Node.js의 자바스크립트는 싱글 쓰레드 방식의 환경입니다. 
+두 개의 작업을 병렬로 진행하는 것이 불가능하기 때문에 IO기반으로 비동기적으로 동시에 발생하는 여러 작업들을 다루고 있습니다.
+
+만약 Node.js가 데이터베이스의 데이터를 가져오는 작업을 요청하면, 데이터를 가져오는 동안 어플리케이션의 다른 일에 집중 할 수 있게 됩니다. <br>
+<pre><code>
+  db.User.get(userId, function(err, user) {
+           // 여기에 데이터가 불려오는 동안 다른 일을 함
+})
+ </pre></code>
+
+그러나 처리할 작업이 클 경우에는 문제가 생길 수 있습니다. <br>
+예를 들어 매우 큰 배열을 sorting 하거나 매우 큰 loop를 도는 작업 등이 있다고 가정한다면, 
+<pre><code>
+ function sortUsersByAge(users) {
+           users.sort(function(a, b) {
+                     return a.age < b.age ? -1 : 1
+           })
+}
+ </pre></code>
+
+사용자가 적다면 문제가 없지만 수천 수만 명이 동시에 접속해서 동일한 작업을 요청할 경우, 이전 작업이 마칠 때까지 다른 사용자들은 결과를 오래 기다려야 하는 문제가 발생합니다. <br>
+(결국 callback을 통한 비동기적인 코드의 효과가 전혀 없어지게 됩니다.) <br>
+이러한 문제를 해결하는 가장 이상적인 해결책은 이미 sorting이 된 결과를 DB상에서 처리해서 내려주는 것입니다. (실제로 Nodejs에서 이 문제를 명확하게 해결할 수 없기 때문에 DB에서 최대한 처리된 데이터를 내려 주는 등 각 상황에 맞춰 해결해야 합니다.) <br>
+즉, CPU에 지나치게 의존하는 작업을 최대한 피해야 합니다.
+
+
+출처 https://www.toptal.com/nodejs/top-10-common-nodejs-developer-mistakes
