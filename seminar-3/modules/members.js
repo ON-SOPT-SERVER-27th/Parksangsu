@@ -20,3 +20,4 @@ const membersDB = [
   ];
   
   module.exports = membersDB;
+  
