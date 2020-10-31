@@ -81,8 +81,4 @@ node_modules/
 .env
 uploads
 static
-static2
-
-Config
-DS_Store
-
+static
