@@ -1,7 +1,8 @@
 var express = require('express');
+var routes = require('../routes');
 var router = express.Router();
 
-router.use('/users', require('./users'));
+router.use(routes.users, require('./users'));
 router.use('/ranking', require('./ranking'));
 router.use('/society', require('./society'));
 router.use('/members', require('./members'));
