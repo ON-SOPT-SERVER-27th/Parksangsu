@@ -77,7 +77,7 @@ typings/
 package-lock.json
 videos
 
-node_modules/
+node_modules
 .env
 uploads
 static
