@@ -207,7 +207,6 @@ router.put('/:id', async (req, res) => {
         if(!putUser){
             return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NO_USER));
         }
-
         return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.UPDATE_USER_SUCCESS, putUser));
     } catch(error){
         console.log(error);
