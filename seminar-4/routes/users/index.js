@@ -139,4 +139,80 @@ router.get('/:id', async (req, res) => {
  //3. status:200 message: READ_USER_SUCCESS, id, email, userName 반환
 
 })
+
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    if(!id){
+        console.log('필요한 값이 없습니다.');
+        return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE))
+    }
+
+    try {
+        const userId = await User.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        if(!userId){
+            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NO_USER));
+        }
+
+        const deleteUser = await User.destroy({
+            where: {
+                id: id
+            },
+            attributes: ["id", "email", 'userName']
+        });
+
+        return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.DELETE_USER_SUCCESS, deleteUser));
+    } catch(error) {
+        console.log(error);
+        return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.DELETE_USER_FAIL));
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const { email, password, userName } = req.body;
+
+    if(!id) {
+        console.log('필요한 값이 없습니다.');
+        return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
+    }
+
+    if(!email || !password || !userName) {
+        console.log('필요한 값이 없습니다.');
+        return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
+    }    
+    try {
+        const salt = crypto.randomBytes(64).toString("base64");
+        const checkCryptoedPassword = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('base64');
+
+        const putUser = await User.update(
+            {
+                email: email,
+                password: checkCryptoedPassword,
+                userName: userName,
+                salt: salt
+            },
+            {
+                where: {
+                    id: id
+                }
+            }
+        )
+
+        if(!putUser){
+            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NO_USER));
+        }
+
+        return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.UPDATE_USER_SUCCESS, putUser));
+    } catch(error){
+        console.log(error);
+        return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.BAD_REQUEST, responseMessage.UPDATE_USER_FAIL));
+    }
+})
+
 module.exports = router;
