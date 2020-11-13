@@ -6,7 +6,7 @@
 
   <img height="500" width="500" src="https://user-images.githubusercontent.com/59385491/99067842-bb50a200-25ee-11eb-9252-4a4ae3644e8d.png">
 
-  ## 👨‍💻 안녕하세요. SOPT 27기 서버파트원 박상수입니다.
+  <h2> 👨‍💻 안녕하세요. SOPT 27기 서버파트원 박상수입니다. </h2>
 
 <br>
 
@@ -18,9 +18,6 @@
 <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 <img alt="Hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FON-SOPT-SERVER-3%2FParksangsu&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
 
-<!-- [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) -->
-
-<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FON-SOPT-SERVER-3%2FParksangsu&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) -->
 
 </div>
 
