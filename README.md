@@ -9,19 +9,23 @@
 
   ## 👨‍💻 안녕하세요. SOPT 27기 서버파트원 박상수입니다.
 
+<br>
+
 
 </div>
 
 <div align=center>
 
+<p>
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FON-SOPT-SERVER-3%2FParksangsu&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+</p>
 </div>
 
 
-<br>
 
 
 ## 소개
