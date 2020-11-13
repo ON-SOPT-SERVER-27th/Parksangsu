@@ -18,8 +18,9 @@
 <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 <img alt="Hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FON-SOPT-SERVER-3%2FParksangsu&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
 
-
 </div>
+
+<br>
 
 ## 소개
 
@@ -27,6 +28,8 @@
 
 -   일정 : 2020년 9월 26일(토)부터 시작
 -   장소 : 온라인 (zoom 이용) 또는 오프라인 모임
+
+<br>
 
 ## 목차
 
@@ -39,21 +42,22 @@
 7. **[클라이언트 합동 세미나](#se7)** 
 8. **[기획 경선, HTTPS](#se8)**
 
-## ⭐️ 참여자
+<br>
 
--   Park Sangsu [:octocat:](https://github.com/epitoneproject)
+## ⭐️ 활동기록
 
+🧑‍💻 **Park Sangsu** [:octocat:](https://github.com/epitoneproject)
 
-|           주차            |              공부내용                |             1차 과제                |             2차 과제                |               3차 과제             |
+|           주차            |              공부내용                |             1차 과제                |             2차 과제                |               3차 과제             |       과제내용           |
 | :-----------------------:| :-------------------------------:  | :-------------------------------: | :-------------------------------: | :-------------------------------: |
-| 2020.10.10 (1주차 토요일)   |  Javascript, git <a name="se1"></a>| [:link:]()                        | [:link:]()                        | [:link:]()                        | 
-| 2020.10.17 (2주차 토요일)   |  Node.Js, Module, 비동기 흐름제어 <a name="se2"></a>  | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
-| 2020.10.31 (3주차 토요일)   |  HTTP, Express, EC2 <a name="se3"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
-| 2020.11.07 (4주차 토요일)   |  Database, Sequelize ORM <a name="se4"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
-| 2020.11.14 (5주차 토요일)   |  Multer, S3 <a name="se5"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
-| 2020.10.17 (6주차 토요일)   |  JWT, SOCKET.IO, 솝커톤 <a name="se6"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
-| 2020.10.17 (7주차 토요일)   |  클라이언트 합동 세미나 <a name="se7"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
-| 2020.10.17 (8주차 토요일)   |  기획 경선, HTTPS <a name="se8"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
+| 2020.10.10 (1주차 토요일)   |  Javascript, git <a name="se1"></a>| [:link:](https://github.com/ON-SOPT-SERVER-3/Parksangsu/tree/master/homework/week1/level1)                        | [:link:](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/homework/week1/level2/team.js)                        | [:link:](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/homework/week1/level3/random.js)                        | 
+| 2020.10.17 (2주차 토요일)   |  Node.Js, Module, 비동기 흐름제어 <a name="se2"></a>  | [:link:]()                        | [:link:]()                        | [:link:]()                        |       |
+| 2020.10.31 (3주차 토요일)   |  HTTP, Express, EC2 <a name="se3"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |   |
+| 2020.11.07 (4주차 토요일)   |  Database, Sequelize ORM <a name="se4"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |   |
+| 2020.11.14 (5주차 토요일)   |  Multer, S3 <a name="se5"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |   |
+| 2020.10.17 (6주차 토요일)   |  JWT, SOCKET.IO, 솝커톤 <a name="se6"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  |
+| 2020.10.17 (7주차 토요일)   |  클라이언트 합동 세미나 <a name="se7"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  |
+| 2020.10.17 (8주차 토요일)   |  기획 경선, HTTPS <a name="se8"></a>     | [:link:]()                        | [:link:]()                        | [:link:]()                        |  |
 
 
 
