@@ -1,8 +1,14 @@
 <div align="center">
 
-  <img height="80" width="150" src="https://user-images.githubusercontent.com/59385491/99065767-39ab4500-25eb-11eb-9490-9d2a4202dd96.png">
+  <img height="50" width="120" src="https://user-images.githubusercontent.com/59385491/99065767-39ab4500-25eb-11eb-9490-9d2a4202dd96.png">
 
   # 대학생 연합 IT벤처 창업 동아리 SOPT
+
+
+  <img height="500" width="500" src="https://user-images.githubusercontent.com/59385491/99067842-bb50a200-25ee-11eb-9252-4a4ae3644e8d.png">
+
+  ## 👨‍💻 안녕하세요. SOPT 27기 서버파트원 박상수입니다.
+
 
 </div>
 
@@ -14,17 +20,9 @@
 
 </div>
 
----
-
-<div align="center">
-
-  <img height="500" width="500" src="https://user-images.githubusercontent.com/59385491/99067842-bb50a200-25ee-11eb-9252-4a4ae3644e8d.png">
-
-  ## 👨‍💻 안녕하세요. SOPT 27기 서버파트원 박상수입니다.
 
 <br>
 
-</div>
 
 ## 소개
 
