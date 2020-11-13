@@ -10,13 +10,11 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![Hits]([![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FON-SOPT-SERVER-3%2FParksangsu&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com))](https://hits.seeyoufarm.com)  
+[![Hits]([![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FON-SOPT-SERVER-3%2FParksangsu&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)](https://hits.seeyoufarm.com)  
 
 </div>
 
 ---
-
-## 소개
 
 <div align="center">
 
@@ -24,7 +22,11 @@
 
   ## 안녕하세요. SOPT 27기 서버파트원 박상수입니다.
 
+<br>
+
 </div>
+
+## 소개
 
 이 레포지토리는 [ON-SOPT](http://sopt.org/wp/?page_id=2519) 27기 서버파트에서 활동하며 공부한 내용을 정리하고자 만들어졌습니다. 
 
