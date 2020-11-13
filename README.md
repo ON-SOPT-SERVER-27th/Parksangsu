@@ -49,7 +49,7 @@
 🧑‍💻 **Park Sangsu** [:octocat:](https://github.com/epitoneproject)
 
 |           주차            |              공부내용                |                과제 설명             |               1차 과제             |             2차 과제                |               3차 과제             |  
-| :-----------------------:| :-------------------------------:  | :-------------------------------: | :-------------------------------: | :-------------------------------: |
+| :-----------------------:| :-------------------------------:  | :-------------------------------: | :-------------------------------: | :-------------------------------: | :-------------------------------: |
 | 2020.10.10 (1주차 토요일)   |  Javascript, git <a name="se1"></a>| [:link:]()   | [:link:](https://github.com/ON-SOPT-SERVER-3/Parksangsu/tree/master/homework/week1/level1)                        | [:link:](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/homework/week1/level2/team.js)                        | [:link:](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/homework/week1/level3/random.js)                        | 
 | 2020.10.17 (2주차 토요일)   |  Node.Js, Module, 비동기 흐름제어 <a name="se2"></a>  |  [:link:]() | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
 | 2020.10.31 (3주차 토요일)   |  HTTP, Express, EC2 <a name="se3"></a>     | [:link:]() | [:link:]()                        | [:link:]()                        | [:link:]()                        |  
