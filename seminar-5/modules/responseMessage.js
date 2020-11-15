@@ -28,6 +28,15 @@ module.exports = {
     DELETE_USER_SUCCESS: "사용자 삭제 성공",
     DELETE_USER_FAIL: "사용자 삭제 실패",
   
+
+    /* Post */
+    CREATE_POST_SUCCESS: "게시글 생성 성공",
+    CREATE_POST_FAIL: "게시글 생성 실패",
+    READ_POST_ALL_SUCCESS: "게시글 조회 성공",
+    READ_POST_ALL_FAIL: "게시글 조회 실패",
+    CREATE_LIKE_SUCCESS: "좋아요 성공",
+    CREATE_LIKE_FAIL: "좋아요 실패",
+
     /* 서버에러 */
     INTERNAL_SERVER_ERROR: "서버 내부 오류",
   }
