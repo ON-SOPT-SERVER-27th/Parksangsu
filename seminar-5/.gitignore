@@ -85,4 +85,3 @@ static
 
 config/
 .DS_Store
-s3.json
