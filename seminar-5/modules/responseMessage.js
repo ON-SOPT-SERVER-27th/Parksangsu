@@ -37,6 +37,10 @@ module.exports = {
     CREATE_LIKE_SUCCESS: "좋아요 성공",
     CREATE_LIKE_FAIL: "좋아요 실패",
 
+    /* Upload Image */
+    CREATE_IMAGE_UPLOAD_SUCCESS: "이미지 업로드 성공",
+    CREATE_IMAGE_UPLOAD_FAIL: "이미지 업로드 실패",
+    
     /* 서버에러 */
     INTERNAL_SERVER_ERROR: "서버 내부 오류",
   }

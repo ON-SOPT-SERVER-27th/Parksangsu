@@ -1,18 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const upload = require('../../modules/multer');
+const multerController = require('../../controller/multerController');
 
 
-router.post('/single', upload.single('image'), async (req, res) => {
-    const image = req.file.location;
-    console.log(req.file);
-    console.log(req.body);
-    res.send({
-        imageUrl: image,
-        file: req.file,
-        body: req.body
-    });
-});
+router.post('/single', upload.single('image'), multerController.uploadImage);
 
 router.post('/array', upload.array('images', 3), async (req, res) => {
     const imageUrls = req.files.map(file => file.location);
