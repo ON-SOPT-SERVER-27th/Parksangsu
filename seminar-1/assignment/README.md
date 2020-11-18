@@ -38,3 +38,7 @@
    - 참고 : [member.js](https://github.com/ON-SOPT-SERVER/ON-SOPT-SERVER-SEMINAR/blob/master/1st-seminar/member.js)
 
 
+
+|               1차 과제             |             2차 과제                |               3차 과제             |  
+| :-------------------------------: | :-------------------------------: | :-------------------------------: |
+| [☝🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/tree/master/seminar-1/assignment/week1/level1)    | [✌🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-1/assignment/week1/level2/team.js) | [🤚🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-1/assignment/week1/level3/random.js)                        | 
