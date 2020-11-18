@@ -25,6 +25,17 @@
 
 ## 과제 설명
 
+<div align="center">
+
+|               과제 설명             |                과제                 |           
+| :-------------------------------: | :-------------------------------: |
+| 1. 오늘 실습한 내용 모두 깃허브에 커밋하기  | [☝🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/tree/master/seminar-1/assignment/week1/level1)    | 
+| 2. 자신의 팀원들을 소개할 수 있는 json Array 만들기 | [✌🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-1/assignment/week1/level2/team.js)    | 
+| 3. 가짜 서버파트 member.js 데이터를 이용해서 랜덤으로 조를 짜는 알고리즘 만들어보기 | [🤚🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-1/assignment/week1/level3/random.js)  | 
+
+</div>
+
+
 ### 1. 오늘 실습한 내용 모두 깃허브에 커밋하기.
 
 ### 2. 자신의 팀원들을 소개할 수 있는 json Array 만들기
@@ -36,11 +47,4 @@
    - 조건1 : OB, YB 비율 오차범위를 최소한으로 유지하며 코드 작성
 
    - 참고 : [member.js](https://github.com/ON-SOPT-SERVER/ON-SOPT-SERVER-SEMINAR/blob/master/1st-seminar/member.js)
-
-
-|               과제 설명             |                과제                 |           
-| :-------------------------------: | :-------------------------------: |
-| 1. 오늘 실습한 내용 모두 깃허브에 커밋하기  | [☝🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/tree/master/seminar-1/assignment/week1/level1)    | 
-| 2. 자신의 팀원들을 소개할 수 있는 json Array 만들기 | [✌🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-1/assignment/week1/level2/team.js)    | 
-| 3. 가짜 서버파트 member.js 데이터를 이용해서 랜덤으로 조를 짜는 알고리즘 만들어보기 | [🤚🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-1/assignment/week1/level3/random.js)  | 
 
