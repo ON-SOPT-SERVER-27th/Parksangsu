@@ -36,6 +36,8 @@ module.exports = {
     READ_POST_ALL_FAIL: "게시글 조회 실패",
     CREATE_LIKE_SUCCESS: "좋아요 성공",
     CREATE_LIKE_FAIL: "좋아요 실패",
+    DELETE_LIKE_SUCCESS: "좋아요 삭제 성공",
+    DELETE_LIKE_FAIL: "좋아요 삭제 실패",
 
     /* Upload Image */
     CREATE_IMAGE_UPLOAD_SUCCESS: "이미지 업로드 성공",
