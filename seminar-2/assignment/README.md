@@ -32,9 +32,9 @@
 
 |               과제 설명             |                과제                 |           
 | :-------------------------------: | :-------------------------------: |
-| 1. NodeJS를 공부하고 솝섭위키에 조별로 정리 문서를 만들기  | [☝🏻]()    | 
-| 2. Promise Quiz, module quiz 완성하기 | [✌🏻]()    | 
-| 3. fs 모듈을 이용하여 비동기적으로 비밀번호 암호화하기| [🤚🏻]()  | 
+| 1. NodeJS를 공부하고 솝섭위키에 조별로 정리 문서를 만들기  | [☝🏻](https://github.com/ON-SOPT-SERVER/SOPT-SERVER-WIKI/blob/master/Nodejs/nodejs-3%EC%A1%B0.md)    | 
+| 2. Promise Quiz, module quiz 완성하기 | [✌🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/tree/master/seminar-2/assignment/week2/level2)    | 
+| 3. fs 모듈을 이용하여 비동기적으로 비밀번호 암호화하기| [🤚🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-2/assignment/week2/level3/password.js)  | 
 
 </div>
 
