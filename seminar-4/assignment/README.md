@@ -32,7 +32,7 @@
 
 |               과제 설명             |                과제                 |           
 | :-------------------------------: | :-------------------------------: |
-| 1. 데이터베이스 테이블 설계해보기  | [☝🏻]()    | 
+| 1. 데이터베이스 테이블 설계해보기  | [☝🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-4/assignment/level1.md)    | 
 | 2. 회원가입, 로그인 마무리하기 | [✌🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-4/routes/users/index.js)    | 
 | 3. 회원정보 수정 및 삭제 하는 기능을 구현해보기 | [🤚🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-4/routes/users/index.js)  | 
 
