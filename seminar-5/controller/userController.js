@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const util = require('../modules/util');
 const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
-const { User } = require('../models');
+const { User, Post } = require('../models');
 
 module.exports = {
     signup : async (req, res) => {
@@ -117,7 +117,11 @@ module.exports = {
                 where : {
                     id
                 },
-                attributes: ['id', 'email', 'userName']
+                attributes: ['id', 'email', 'userName'],
+                include: [{
+                    model: Post,
+                }]
+                
             })
     
         if(!user){
