@@ -23,22 +23,17 @@
 
 <br>
 
-## 공부내용
-
-1. **[Javascript, git](#se1)**
-
-<br>
-
-
 ## 과제 설명
 
 ### 1. 오늘 실습한 내용 모두 깃허브에 커밋하기.
 
 ### 2. 자신의 팀원들을 소개할 수 있는 json Array 만들기
+    
+   - 조건1 : 팀원들의 이름, 사는 곳, 나이, 취미, 정보를 출력하는 함수를 포함!
 
 ### 3. 가짜 서버파트 member.js 데이터를 이용해서 랜덤으로 조를 짜는 알고리즘 만들어보기
 
-   - 조건1. OB, YB 비율 오차범위를 최소한으로 유지하며 코드 작성
+   - 조건1 : OB, YB 비율 오차범위를 최소한으로 유지하며 코드 작성
 
    - 참고 : [member.js](https://github.com/ON-SOPT-SERVER/ON-SOPT-SERVER-SEMINAR/blob/master/1st-seminar/member.js)
 
