@@ -113,15 +113,17 @@ module.exports = {
     
         //2. id값이 유효한지 체크! 존재하지 않는 아이디면 NO_USER 반환
         try{
-            const user = await User.findOne({
+            const user = await User.findAll({
                 where : {
                     id
                 },
                 attributes: ['id', 'email', 'userName'],
                 include: [{
                     model: Post,
+                }, {
+                    model: Post,
+                    as: 'Liked'
                 }]
-                
             })
     
         if(!user){
