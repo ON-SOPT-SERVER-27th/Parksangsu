@@ -3,6 +3,7 @@ const util = require('../modules/util');
 const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
 const { User, Post } = require('../models');
+const jwt = require('../modules/jwt');
 
 module.exports = {
     signup : async (req, res) => {
