@@ -1,3 +1,3 @@
-// module.exports = {
-//     userService: require('./userService')
-// }
+module.exports = {
+    userService: require('./userService')
+}
