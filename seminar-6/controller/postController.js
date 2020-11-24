@@ -2,6 +2,8 @@ const ut = require('../modules/util');
 const rm = require('../modules/responseMessage');
 const sc = require('../modules/statusCode');
 const { User, Post, Like } = require('../models');
+const userService = require('../service/userService');
+const postService = require('../service/postService');
 
 module.exports = {
     createPost: async (req, res) => {
@@ -13,23 +15,14 @@ module.exports = {
         }
 
         try {
-            const user = await User.findOne({
-                where: {
-                    id: userId
-                }
-            })
-
-            if(!user) {
+            const userIdCheck = await userService.userIdCheck(userId);
+            if(!userIdCheck) {
                 console.log('유저 id가 없습니다');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
             }
             
-            const post = await Post.create({
-                UserId: userId,
-                title,
-                contents
-            })
-            return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, post));
+            const postCreate = await postService.postCreate(userId, title, contents);
+            return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postCreate));
         } catch(error) {
             console.log(error);
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_FAIL));

@@ -1,7 +1,7 @@
 const ut = require('../modules/util');
 const rm = require('../modules/responseMessage');
 const sc = require('../modules/statusCode');
-const { Post } = require('../models');
+const postService = require('../service/postService');
 
 module.exports = {
     uploadImage: async (req, res) => {
@@ -14,13 +14,24 @@ module.exports = {
         }
         
         try {
-            const upload = await Post.create({
-                postImageUrl: image,
-                title,
-                contents
-            })
+            const upload = await postService.uploadImage(title, contents, image);
             return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_IMAGE_UPLOAD_SUCCESS, upload));
         } catch(error) {
+            console.log(error);
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_IMAGE_UPLOAD_FAIL));
+        }
+    },
+    uploadImages: async (req, res) => {
+        try {
+            const imageUrls = req.files.map(file => file.location);
+            console.log(req.files);
+            console.log(req.body);
+            res.send({
+                imageUrls: imageUrls,
+                file: req.files,
+                body: req.body
+            });
+        } catch (error) {
             console.log(error);
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_IMAGE_UPLOAD_FAIL));
         }
