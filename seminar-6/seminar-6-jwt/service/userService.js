@@ -105,6 +105,7 @@ module.exports = {
                 },
                 attributes: ['id', 'userName', 'email']
             })
+            return getUserProfile;
         } catch (err) {
             throw (err);
         }
