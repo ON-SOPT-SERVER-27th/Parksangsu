@@ -38,7 +38,7 @@ module.exports = {
             console.log('존재하는 아이디가 아닙니다.');
             res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));        
         }    
-    
+        
         try{
             const alreadyEmail = await userService.emailCheck(email);
             if(!alreadyEmail){
@@ -53,10 +53,11 @@ module.exports = {
                 res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.MISS_MATCH_PW));
             }
             
+            const { accessToken, refreshToken } = await jwt.sign(user);
+            
             res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.SIGN_IN_SUCCESS, {
-                email: user.email, 
-                password: user.password, 
-                userName: user.userName
+                accessToken,
+                refreshToken
             }));  
         
         } catch(error){
