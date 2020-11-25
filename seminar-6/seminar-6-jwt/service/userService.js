@@ -96,6 +96,18 @@ module.exports = {
         } catch (err) {
             throw err;
         }
+    },
+    userProfileFindById: async (id) => {
+        try {
+            const getUserProfile = await User.findOne({
+                where: {
+                    id
+                },
+                attributes: ['id', 'userName', 'email']
+            })
+        } catch (err) {
+            throw (err);
+        }
     }
 }
 

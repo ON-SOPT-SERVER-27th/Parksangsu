@@ -3,6 +3,7 @@ const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
 const jwt = require('../modules/jwt');
 const userService = require('../service/userService');
+const { User } = require('../../seminar-6-refreshToken/models');
 
 module.exports = {
     signup : async (req, res) => {
@@ -130,6 +131,17 @@ module.exports = {
         } catch(error) {
             console.log(error);
             return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.INTERNAL_SERVER_ERROR));
+        }
+    },
+    getProfile: async (req, res) => {
+        const { id } = req.decoded;
+        console.log(req.decoded);
+        try {
+            const findByIdUserProfile = await userService.userProfileFindById(id)
+            return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_PROFILE_SUCCESS, findByIdUserProfile));
+        } catch(err) {
+            console.log(err);
+            return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.USER_READ_ALL_FAIL));    
         }
     }
 }
