@@ -3,6 +3,7 @@ const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
 const jwt = require('../modules/jwt');
 const userService = require('../service/userService');
+const { User } = require('../models');
 
 module.exports = {
     signup : async (req, res) => {
@@ -53,10 +54,11 @@ module.exports = {
                 res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.MISS_MATCH_PW));
             }
             
+            const { accessToken, refreshToken } = await jwt.sign(user);
+            
             res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.SIGN_IN_SUCCESS, {
-                email: user.email, 
-                password: user.password, 
-                userName: user.userName
+                accessToken,
+                refreshToken
             }));  
         
         } catch(error){
