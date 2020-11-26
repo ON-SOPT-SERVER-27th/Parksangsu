@@ -132,6 +132,17 @@ module.exports = {
             console.log(error);
             return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.INTERNAL_SERVER_ERROR));
         }
+    },
+    getProfile: async (req, res) => {
+        const { id } = req.decoded;
+        console.log(req.decoded);
+        try {
+            const user = await userService.userIdCheck(id);
+            return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_PROFILE_SUCCESS, user));
+        } catch(err) {
+            console.log(err);
+            return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.USER_READ_ALL_FAIL));    
+        }
     }
 }
 
