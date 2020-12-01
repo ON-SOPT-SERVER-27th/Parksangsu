@@ -25,7 +25,11 @@
 
 EC2 + RDS 연동해서 실습한 코드 올리기
 
+<br>
+
 ### Postman Test
+
+---
 
 <img width="879" alt="6차 세미나 과제 - Postman Test" src="https://user-images.githubusercontent.com/59385491/100730790-dbb19680-340d-11eb-9d59-c6e3c2717a42.png">
 
@@ -36,6 +40,8 @@ EC2에 실습한 코드 올리고 POSTMAN으로 테스트! (signin => response�
 <br>
 
 ### Terminal
+
+---
 
 <img width="772" alt="6차 세미나 과제 - Termianl" src="https://user-images.githubusercontent.com/59385491/100730806-e3713b00-340d-11eb-801e-4a5e5e6abe46.png">
 
