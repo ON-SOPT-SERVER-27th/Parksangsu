@@ -32,9 +32,9 @@
 
 |               과제 설명             |                과제                 |           
 | :-------------------------------: | :-------------------------------: |
-| 1.  | [☝🏻]()    | 
-| 2. | [✌🏻]()    | 
-| 3. | [🤚🏻]()  | 
+| 1. JWT 미들웨어 구현하기  | [☝🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-6/seminar-6-refreshToken/middlewares/authUtil.js)    | 
+| 2. EC2 + RDS 연동해서 실습한 코드 올리기| [✌🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-6/seminar-6-refreshToken/assignment/level2.md)    | 
+| 3. accessToken을 갱신시켜주는 Refresh Token 구현해보기| [🤚🏻](https://github.com/ON-SOPT-SERVER-3/Parksangsu/blob/master/seminar-6/seminar-6-refreshToken/modules/jwt.js)  | 
 
 </div>
 
