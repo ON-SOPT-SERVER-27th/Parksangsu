@@ -41,18 +41,15 @@
 <br>
 
 
-<!-- ### 1. 이미지를 업로드 할 수 있는 로직을 추가해보기
+### 1. JWT 미들웨어 구현하기
 
-   - 조건1 : Post model에 보면 PostImageUrl 컬럼이 있다. **s3 multer middleware**(single)를 사용해서 **이미지를 업로드** 할 수 있는 로직을 추가해보기
-   - 조건2 : Router - Controller 분리하기.
+<br>
 
-
-### 2. 좋아요 취소를 하는 로직을 구현해보기
+### 2. EC2 + RDS 연동해서 실습한 코드 올리기
     
-   - 조건1 : /DELETE/posts/:postId/like를 활용해서 좋아요 취소를 하는 로직을 구현해보기.
-   - 조건2 : Router - Controller 분리하기.
+<br>
 
-### 3. 사용자 id를 입력받아 사용자 정보를 불러오는 로직 구현해보기
+### 3. accessToken을 갱신시켜주는 Refresh Token 구현해보기
 
-   - 조건1 : /GET users/:id를 활용해서 사용자 id를 입력받아 사용자 정보를 불러오는 로직을 구현해보기
-   - 조건2 : user의 email, userName, user가 쓴 게시글들을 모두 불러오세요. -->
+   - 조건1 : refreshToken은 데이터베이스에 저장 (userModel)
+   - 조건2 : modules/jwt.js에서 refresh 해주는 메서드 구현
