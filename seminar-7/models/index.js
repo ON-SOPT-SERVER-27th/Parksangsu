@@ -15,10 +15,10 @@ db.Sequelize = Sequelize;
 
 /* Post */
 db.Post = require('./post')(sequelize, Sequelize);
-db.PostDetail = require('./post/:postId')(sequelize, Sequelize);
-db.Facilities = require('./post/:postId/facilities')(sequelize, Sequelize);
-db.PostDetailSelect = require('./post/:postId/detail')(sequelize, Sequelize);
-db.Hashtag = require('./post/:postId/hashtag')(sequelize, Sequelize);
+db.PostDetail = require('./postDetail')(sequelize, Sequelize);
+db.Facilities = require('./facilities')(sequelize, Sequelize);
+db.PostDetailSelect = require('./postDetailSelect')(sequelize, Sequelize);
+db.Hashtag = require('./hashtag')(sequelize, Sequelize);
 
 /* Banner */
 db.Banner = require('./banner')(sequelize, Sequelize);
