@@ -34,7 +34,7 @@ db.PostDetailSelect.belongsTo(db.Post);
 
 /** 1 : N   Post : Facilities */
 db.Post.hasMany(db.Facilities, { onDelete: 'cascade' });
-db.Post.belongsTo(db.Post);
+db.Facilities.belongsTo(db.Post);
 
 /** 1 : N   Post : Hashtag */
 db.Post.hasMany(db.Hashtag, { onDelete: 'cascade' });
