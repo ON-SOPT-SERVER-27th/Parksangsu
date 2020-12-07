@@ -25,5 +25,14 @@ module.exports = {
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.READ_POST_ALL_FAIL));
         }
+    },
+    findAllPost: async (req, res) => {
+        const { category } = req.body;
+        try {
+            const findAllPost = await postService.findAllPost(category);
+            return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_SUCCESS, findAllPost));
+        } catch (err) {
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.FIND_POST_FAIL));
+        }
     }
 }

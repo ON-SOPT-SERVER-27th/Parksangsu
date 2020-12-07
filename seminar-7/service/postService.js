@@ -23,6 +23,18 @@ module.exports = {
         } catch (err) {
             throw err;
         }
-    }
+    },
+    findAllPost: async (category) => {
+        try {
+            const findAllPost = await Post.findAll({
+                where: {
+                    category
+                }
+            })
+            return findAllPost
+        } catch (err) {
+            throw err;
+        }
+    }    
 }
 
