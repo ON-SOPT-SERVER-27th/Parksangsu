@@ -13,5 +13,16 @@ module.exports = {
             console.log(error);
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_IMAGE_UPLOAD_FAIL));
         }
+    },
+    uploadImages: async (req, res) => {
+        try {
+            const imageUrls = req.files.map(file => file.location);
+            res.send({
+                imageUrls: imageUrls,
+            });
+        } catch (error) {
+            console.log(error);
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_IMAGE_UPLOAD_FAIL));
+        }
     }
 }
