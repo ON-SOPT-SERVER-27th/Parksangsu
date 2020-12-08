@@ -39,7 +39,7 @@ module.exports = {
     },
 
     // PostDetail API -> postDetailImage join해서 데이터 가져오기 -> 그 전에, array 데이터는 따로 넣는걸로. 대신 id값은 가져오고. 
-    createPostDetail: async (req, res) => {
+    createPostDetail: async (req, res, next) => {
         // const imageUrls = req.files.map(file => file.location);
         // console.log(imageUrls);
         const { introducedPlace, openingHours, closedDays, notice } = req.body;
@@ -50,16 +50,27 @@ module.exports = {
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE)); 
             }
         try {
-            const postDetailCreate = await postService.createPostDetail(introducedPlace, openingHours, closedDays, notice, postId);
-            return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postDetailCreate));
+            const findPostId = await postService.findPostId(postId);
+            if(!findPostId) {
+                console.log('원하는 post id값이 없습니다.')
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
+            }
+            const findPostDetailId = await postService.findPostDetailId(postId);
+            if(!findPostDetailId) {
+                const postDetailCreate = await postService.createPostDetail(introducedPlace, openingHours, closedDays, notice, postId);
+                res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postDetailCreate));
+            } else {
+                res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.DUPLICATE_VALUES));
+            }            
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_DETAIL_FAIL));
         }
+        next();
     },
     findPostDetail: async (req, res) => {
         const { postId } = req.params;
         try {
-            const findPostDetail = await postService.findPostDetailId(postId);
+            const findPostDetail = await postService.findPostDetailIdOne(postId);
             if (!findPostDetail) {
                 console.log('존재하지 않는 아이디입니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));

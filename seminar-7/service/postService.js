@@ -69,27 +69,41 @@ module.exports = {
     },
 
     // Post PostDetailImage  
-    createPostDetailImage: async (postId, imageUrls) => {
+    createPostDetailImage: async (findPostDetailId, imageUrls) => {
         try {
             const createPostDetailImage = await PostDetailImage.create({
                 postImageUrl: imageUrls,
-                PostDetailId: postId
+                PostDetailId: findPostDetailId
             })
             return createPostDetailImage;
         } catch (err) {
             throw err;
         }
     },
-
-    
-
-    // GET PostDetail
     findPostDetailId: async (postId) => {
         try {
             const findPostDetailId = await PostDetail.findOne({
                 where: {
                     PostId: postId
                 }
+            })
+            return findPostDetailId
+        } catch (err) {
+            throw err;
+        }
+    },
+    
+    // GET PostDetail
+    findPostDetailIdOne: async (postId) => {
+        try {
+            const findPostDetailId = await PostDetail.findOne({
+                where: {
+                    PostId: postId
+                },
+                include: [{
+                    model: PostDetailImage,
+                    attributes: ['postImageUrl']
+                }]
             })
             return findPostDetailId;
         } catch (err) {

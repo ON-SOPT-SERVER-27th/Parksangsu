@@ -10,7 +10,7 @@ router.get('/find', postController.findAllPost);
 
 
 // PostDetail
-router.post('/detail/:postId', upload.array('images'), multerController.uploadImages, postController.createPostDetail);
+router.post('/detail/:postId', upload.array('images', 5), postController.createPostDetail, multerController.uploadImages);
 router.get('/detail/:postId', postController.findPostDetail);
 
 
