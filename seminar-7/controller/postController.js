@@ -40,8 +40,6 @@ module.exports = {
 
     // PostDetail API
     createPostDetail: async (req, res, next) => {
-        // const imageUrls = req.files.map(file => file.location);
-        // console.log(imageUrls);
         const { introducedPlace, openingHours, closedDays, notice } = req.body;
         const { postId } = req.params;
             
@@ -52,13 +50,13 @@ module.exports = {
         try {
             const findPostId = await postService.findPostId(postId);
             
-            if(!findPostId) {
+            if (!findPostId) {
                 console.log('원하는 post id값이 없습니다.')
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
             }
             const findPostDetailId = await postService.findPostDetailId(postId);
-  
-            if(!findPostDetailId) {
+
+            if (!findPostDetailId) {
                 const postDetailCreate = await postService.createPostDetail(introducedPlace, openingHours, closedDays, notice, postId);
                 res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postDetailCreate));
             } else {
@@ -80,6 +78,35 @@ module.exports = {
             return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_DETAIL_SUCCESS, findPostDetail));
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.FIND_POST_DETAIL_FAIL));
+        }
+    },
+
+    // PostDetailSelect API
+    createPostDetailSelect: async (req, res) => {
+        const { title, contents, reservationTime, capacity } = req.body;
+        const { postId } = req.params;
+
+        if (!title || !contents || !reservationTime || !capacity || !postId) {
+            console.log('필요한 값을 넣지 않았습니다.');
+            return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+        }
+        try {
+            const findPostId = await postService.findPostId(postId);
+
+            if (!findPostId) {
+                console.log('원하는 post id값이 없습니다.');
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
+            }
+
+            const findPostDetailSelectId = await postService.findPostDetailSelectId(postId);
+            if (!findPostDetailSelectId) {
+                const postDetailSelectCreate = await postService.createPostDetailSelect(title, contents, reservationTime, capacity, postId);
+                res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_DETAIL_SELECT_SUCCESS, postDetailSelectCreate));
+            } else {
+                res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.DUPLICATE_VALUES));
+            }            
+        } catch (err) {
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_DETAIL_SELECT_FAIL));
         }
     }
 }

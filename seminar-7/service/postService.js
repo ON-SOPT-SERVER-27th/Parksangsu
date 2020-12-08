@@ -39,7 +39,8 @@ module.exports = {
     },
 
     // PostDetail Service
-    // Post PostDetail 
+
+    // POST PostDetail 
     createPostDetail: async (introducedPlace, openingHours, closedDays, notice, postId) => {
         try {
             const createPostDetail = await PostDetail.create({
@@ -67,7 +68,7 @@ module.exports = {
         }
     },
 
-    // Post PostDetailImage  
+    // POST PostDetailImage  
     createPostDetailImage: async (findPostDetailId, imageUrls) => {
         try {
             const createPostDetailImage = await PostDetailImage.create({
@@ -103,12 +104,43 @@ module.exports = {
                 include: [{
                     model: PostDetailImage,
                     attributes: ['postImageUrl']
+                }, {
+                    model: Post,
+                    attributes: ['title']
                 }]
             })
             return findPostDetailId;
         } catch (err) {
             throw err;
         }
+    },
+
+    // POST PostDetailSelect
+    createPostDetailSelect: async (title, contents, reservationTime, capacity, postId) => {
+        try {
+            const createPostDetailSelect = await PostDetailSelect.create({
+                title,
+                contents,
+                reservationTime,
+                capacity,
+                PostId: postId
+            })
+            return createPostDetailSelect;
+        } catch (err) {
+            throw err;
+        }
+    },
+    findPostDetailSelectId: async (postId) => {
+        try {
+            const findPostDetailId = await PostDetailSelect.findOne({
+                where: {
+                    PostId: postId
+                },
+                attributes: ['id']
+            })
+            return findPostDetailId
+        } catch (err) {
+            throw err;
+        }
     }
 }
-

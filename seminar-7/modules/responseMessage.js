@@ -20,6 +20,12 @@ module.exports = {
     FIND_POST_DETAIL_SUCCESS: "포스트 디테일 조회 성공",
     FIND_POST_DETAIL_FAIL: "포스트 디테일 조회 실패",
 
+    /* Post Detail Select */
+    CREATE_POST_DETAIL_SELECT_SUCCESS: "포스트 디테일 선택 생성 성공",
+    CREATE_POST_DETAIL_SELECT_FAIL: "포스트 디테일 선택 생성 실패",
+    FIND_POST_DETAIL_SELECT_SUCCESS: "포스트 디테일 선택 조회 성공",
+    FIND_POST_DETAIL_SELECT_FAIL: "포스트 디테일 선택 조회 실패",
+
     /* Banner */
     READ_BANNER_IMAGE_SUCCESS: "배너 이미지 조회 성공",
     READ_BANNER_IMAGE_FAIL: "배너 이미지 조회 실패",

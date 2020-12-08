@@ -1,5 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('PostDetail', {
+        contents: {
+            type: DataTypes.TEXT(),
+            allowNull: false,
+        },
         introducedPlace: {
             type: DataTypes.STRING(30),
             allowNull: false,
