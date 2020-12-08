@@ -38,7 +38,7 @@ module.exports = {
         }
     },
 
-    // PostDetail API -> postDetailImage join해서 데이터 가져오기 -> 그 전에, array 데이터는 따로 넣는걸로. 대신 id값은 가져오고. 
+    // PostDetail API
     createPostDetail: async (req, res, next) => {
         // const imageUrls = req.files.map(file => file.location);
         // console.log(imageUrls);
@@ -51,11 +51,13 @@ module.exports = {
             }
         try {
             const findPostId = await postService.findPostId(postId);
+            
             if(!findPostId) {
                 console.log('원하는 post id값이 없습니다.')
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
             }
             const findPostDetailId = await postService.findPostDetailId(postId);
+  
             if(!findPostDetailId) {
                 const postDetailCreate = await postService.createPostDetail(introducedPlace, openingHours, closedDays, notice, postId);
                 res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postDetailCreate));

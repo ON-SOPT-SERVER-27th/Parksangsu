@@ -39,7 +39,6 @@ module.exports = {
     },
 
     // PostDetail Service
-
     // Post PostDetail 
     createPostDetail: async (introducedPlace, openingHours, closedDays, notice, postId) => {
         try {
@@ -85,7 +84,8 @@ module.exports = {
             const findPostDetailId = await PostDetail.findOne({
                 where: {
                     PostId: postId
-                }
+                },
+                attributes: ['id']
             })
             return findPostDetailId
         } catch (err) {
