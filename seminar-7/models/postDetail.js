@@ -15,11 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         notice: {
             type: DataTypes.TEXT(),
             allowNull: true,
-        },
-        postImageUrl: {
-            type: DataTypes.STRING(500),
-            allowNull: false,
-        },
+        }
     }, {
         freezeTableName: true,
         timestamps: false,

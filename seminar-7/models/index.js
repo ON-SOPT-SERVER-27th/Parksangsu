@@ -19,6 +19,7 @@ db.PostDetail = require('./postDetail')(sequelize, Sequelize);
 db.Facilities = require('./facilities')(sequelize, Sequelize);
 db.PostDetailSelect = require('./postDetailSelect')(sequelize, Sequelize);
 db.Hashtag = require('./hashtag')(sequelize, Sequelize);
+db.PostDetailImage = require('./postDetailImage')(sequelize, Sequelize);
 
 /* Banner */
 db.Banner = require('./banner')(sequelize, Sequelize);
@@ -39,6 +40,10 @@ db.Facilities.belongsTo(db.Post);
 /** 1 : N   Post : Hashtag */
 db.Post.hasMany(db.Hashtag, { onDelete: 'cascade' });
 db.Hashtag.belongsTo(db.Post);
+
+/** 1 : N   PostDetail : PostDetailImage */
+db.PostDetail.hasMany(db.PostDetailImage, { onDelete: 'cascade' });
+db.PostDetailImage.belongsTo(db.PostDetail);
 
 
 module.exports = db;

@@ -1,6 +1,7 @@
-const { Post, PostDetail, PostDetailSelect, Hashtag, Facilities } = require('../models');
+const { Post, PostDetail, PostDetailSelect, Hashtag, Facilities, PostDetailImage } = require('../models');
 
 module.exports = {
+    // Post Service
     createPost: async (title, contents, address, price, image, category) => {
         try {
             const createPost = await Post.create({
@@ -36,14 +37,17 @@ module.exports = {
             throw err;
         }
     },
-    createPostDetail: async (introducedPlace, openingHours, closedDays, notice, postId, imageUrls) => {
+
+    // PostDetail Service
+
+    // Post PostDetail 
+    createPostDetail: async (introducedPlace, openingHours, closedDays, notice, postId) => {
         try {
             const createPostDetail = await PostDetail.create({
                 introducedPlace,
                 openingHours,
                 closedDays,
                 notice,
-                postImageUrl: imageUrls,
                 PostId: postId
             })
             return createPostDetail;
@@ -63,11 +67,28 @@ module.exports = {
             throw err;
         }
     },
-    findPostDetailId: async (id) => {
+
+    // Post PostDetailImage  
+    createPostDetailImage: async (postId, imageUrls) => {
+        try {
+            const createPostDetailImage = await PostDetailImage.create({
+                postImageUrl: imageUrls,
+                PostDetailId: postId
+            })
+            return createPostDetailImage;
+        } catch (err) {
+            throw err;
+        }
+    },
+
+    
+
+    // GET PostDetail
+    findPostDetailId: async (postId) => {
         try {
             const findPostDetailId = await PostDetail.findOne({
                 where: {
-                    PostId: id
+                    PostId: postId
                 }
             })
             return findPostDetailId;
