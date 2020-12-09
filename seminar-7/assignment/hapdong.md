@@ -5,7 +5,7 @@
   <br>
   <br>
 
-  <img height="130" width="450" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
+  <img height="110" width="300" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
 
   <h2> SOPT 클라이언트 합동 세미나 </h2>
 
