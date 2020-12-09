@@ -35,7 +35,7 @@
 
 <br>
 
-## models/index.js
+## 🗂 models/index.js
 
 ```javascript
 /* Post */
@@ -73,6 +73,34 @@ db.PostDetail.belongsToMany(db.Post, { through: 'Hashtag', as: 'hasher', onDelet
 
 <br>
 
-## 💼 Contributor
+## 🏷 config/config.json
+
+```javascript
+{
+  "development": {
+    "username": "---",
+    "password": "---",
+    "database": "---",
+    "host": "---",
+    "dialect": "mysql"
+  }
+}
+```
+
+<br>
+
+## 🏷 config/s3.json
+
+```javascript
+{
+    "accessKeyId": "---",
+    "secretAccessKey": "---",
+    "region": "---"
+}
+```
+
+<br>
+
+## 🎙 Contributor
 
 - [박상수](https://github.com/epitoneproject)
