@@ -128,15 +128,49 @@ module.exports = {
     createFacilities: async (req, res) => {
         const { location: image } = req.file;
         const { contents } = req.body;
-        if(!contents || !image) {
+        const { postId } = req.params;
+    
+        if(!contents || !image || !postId) {
             console.log('필요한 값을 넣지 않았습니다.');
             return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
         }
         try {
-            const FacilitiesCreate = await postService.createFacilities(image, contents);
-            return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, FacilitiesCreate));
+            const findFacilitiesId = await postService.findFacilitiesId(postId);
+
+            if (findFacilitiesId) {
+                const FacilitiesCreate = await postService.createFacilities(image, contents, postId);
+                return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_DETAIL_FACILITIES_SUCCESS, FacilitiesCreate));
+            } else {
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_ID));
+            }
         } catch (err) {
-            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_FAIL));
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_DETAIL_FACILITIES_FAIL));
+        }
+    },
+
+    // Hashtag API
+    createHashtag: async (req, res) => {
+        const { postId } = req.params;
+        const { postDetailId, tag } = req.body;
+        
+        if (!postId || !postDetailId || !tag) {
+            console.log('필요한 값을 넣지 않았습니다.');
+            return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+        } 
+
+        try {
+            const findPostId = await postService.findPostId(postId);
+            
+            if (!findPostId) {
+                console.log('원하는 post id값이 없습니다.')
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
+            }
+
+            const createHashtag = await postService.createHashtag(postId, postDetailId, tag);
+            return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_HASHTAG_SUCCESS, createHashtag));
+        } catch (err) {
+            console.log(err);
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_HASHTAG_FAIL));
         }
     }
 }

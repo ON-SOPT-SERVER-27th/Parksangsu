@@ -107,6 +107,9 @@ module.exports = {
                 }, {
                     model: Post,
                     attributes: ['title']
+                }, {
+                    model: Facilities,
+                    attributes: ['iconImageUrl', 'contents'] 
                 }]
             })
             return findPostDetailId;
@@ -157,15 +160,44 @@ module.exports = {
     },
 
     // POST Facilities
-    createFacilities: async (image, contents) => {
+    createFacilities: async (image, contents, postId) => {
         try {
             const createFacilities = await Facilities.create({
                 iconImageUrl: image,
-                contents
+                contents,
+                PostDetailId: postId
             })
             return createFacilities;
         } catch (err) {
             throw err;
         }
+    },
+    findFacilitiesId: async (postId) => {
+        try {
+            const findFacilitiesId = await PostDetail.findOne({
+                where: {
+                    id: postId
+                },
+                attributes: ['id']
+            })
+            return findFacilitiesId
+        } catch (err) {
+            throw err;
+        }
+    },
+
+    // POST Hashtag
+    createHashtag: async (postId, postDetailId, tag) => {
+        try {
+            const createHashtag = await Hashtag.create({
+                PostId: postId,
+                PostDetailId: postDetailId,
+                tag
+            })
+            return createHashtag;
+        } catch (err) {
+            throw err;
+        }
     }
+
 }

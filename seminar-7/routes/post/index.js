@@ -18,6 +18,9 @@ router.post('/detail/:postId/select', postController.createPostDetailSelect);
 router.get('/detail/:postId/select', postController.findPostDetailSelect);
 
 // Facilities
-router.post('/upload', upload.single('image') ,postController.createFacilities);
+router.post('/detail/:postId/facilities', upload.single('image'), postController.createFacilities);
+
+// Hashtag
+router.post('/detail/:postId/hashtag', postController.createHashtag);
 
 module.exports = router;

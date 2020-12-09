@@ -33,16 +33,16 @@ db.PostDetail.belongsTo(db.Post);
 db.Post.hasOne(db.PostDetailSelect, { onDelete: 'cascade' });
 db.PostDetailSelect.belongsTo(db.Post);
 
-/** 1 : N   Post : Hashtag */
-db.Post.hasMany(db.Hashtag, { onDelete: 'cascade' });
-db.Hashtag.belongsTo(db.Post);
-
 /** 1 : N   PostDetail : PostDetailImage */
 db.PostDetail.hasMany(db.PostDetailImage, { onDelete: 'cascade' });
 db.PostDetailImage.belongsTo(db.PostDetail);
 
-/** 1 : N   Facilities : PostDetail */
-db.Facilities.hasMany(db.PostDetail, {onDelete: 'cascade' })
-db.PostDetail.belongsTo(db.Facilities);
+/** 1 : N   PostDetail : Facilities */
+db.PostDetail.hasMany(db.Facilities, {onDelete: 'cascade' })
+db.Facilities.belongsTo(db.PostDetail);
+
+/** N : M   Post : PostDetail => Hashtag */
+db.Post.belongsToMany(db.PostDetail, { through: 'Hashtag', as: 'hashed', onDelete: 'cascade' });
+db.PostDetail.belongsToMany(db.Post, { through: 'Hashtag', as: 'hasher', onDelete: 'cascade' });
 
 module.exports = db;
