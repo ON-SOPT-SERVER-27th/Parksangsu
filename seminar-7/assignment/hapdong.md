@@ -4,7 +4,11 @@
 
   # 대학생 연합 IT벤처 창업 동아리 SOPT
 
-  <<img height="180" width="600" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
+  <br>
+
+  <<img height="130" width="480" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
+
+  <br>
 
   <h2> SOPT 클라이언트 합동 세미나 </h2>
 
