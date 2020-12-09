@@ -17,4 +17,7 @@ router.get('/detail/:postId', postController.findPostDetail);
 router.post('/detail/:postId/select', postController.createPostDetailSelect);
 router.get('/detail/:postId/select', postController.findPostDetailSelect);
 
+// Facilities
+router.post('/upload', upload.single('image') ,postController.createFacilities);
+
 module.exports = router;

@@ -71,12 +71,12 @@ module.exports = {
     findPostDetail: async (req, res) => {
         const { postId } = req.params;
         try {
-            const findPostDetail = await postService.findPostDetailIdOne(postId);
-            if (!findPostDetail) {
+            const findPostDetailOne = await postService.findPostDetailIdOne(postId);
+            if (!findPostDetailOne) {
                 console.log('존재하지 않는 아이디입니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
             }
-            return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_DETAIL_SUCCESS, findPostDetail));
+            return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_DETAIL_SUCCESS, findPostDetailOne));
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.FIND_POST_DETAIL_FAIL));
         }
@@ -121,6 +121,22 @@ module.exports = {
             return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_DETAIL_SELECT_SUCCESS, findPostDetailSelect));
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.FIND_POST_DETAIL_SELECT_FAIL));
+        }
+    },
+
+    // Facilities API
+    createFacilities: async (req, res) => {
+        const { location: image } = req.file;
+        const { contents } = req.body;
+        if(!contents || !image) {
+            console.log('필요한 값을 넣지 않았습니다.');
+            return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+        }
+        try {
+            const FacilitiesCreate = await postService.createFacilities(image, contents);
+            return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, FacilitiesCreate));
+        } catch (err) {
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_FAIL));
         }
     }
 }

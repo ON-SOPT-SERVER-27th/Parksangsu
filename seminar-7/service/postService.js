@@ -155,4 +155,17 @@ module.exports = {
             throw err;
         }
     },
+
+    // POST Facilities
+    createFacilities: async (image, contents) => {
+        try {
+            const createFacilities = await Facilities.create({
+                iconImageUrl: image,
+                contents
+            })
+            return createFacilities;
+        } catch (err) {
+            throw err;
+        }
+    }
 }
