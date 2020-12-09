@@ -117,6 +117,9 @@ module.exports = {
     },
     findPostDetailSelect: async (req, res) => {
         const { postId } = req.params;
+            if (!postId) {
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_ID));
+            }
         try {
             const findPostDetailSelect = await postService.findPostDetailSelectIdOne(postId);
             if (!findPostDetailSelect) {
