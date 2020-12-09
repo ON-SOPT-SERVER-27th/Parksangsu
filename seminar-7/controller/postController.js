@@ -72,6 +72,7 @@ module.exports = {
         const { postId } = req.params;
         try {
             const findPostDetailOne = await postService.findPostDetailIdOne(postId);
+            
             if (!findPostDetailOne) {
                 console.log('존재하지 않는 아이디입니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));

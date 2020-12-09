@@ -105,11 +105,12 @@ module.exports = {
                     model: PostDetailImage,
                     attributes: ['postImageUrl']
                 }, {
-                    model: Post,
-                    attributes: ['title']
-                }, {
                     model: Facilities,
                     attributes: ['iconImageUrl', 'contents'] 
+                }, {
+                    model: Post,
+                    as: 'hasher',
+                    attributes: { exclude : ['id', 'contents', 'address', 'price', 'postImageUrl', 'category' ]}
                 }]
             })
             return findPostDetailId;
