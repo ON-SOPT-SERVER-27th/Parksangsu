@@ -4,10 +4,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(30),
             allowNull: false,
         },
-        contents: {
-            type: DataTypes.TEXT(),
-            allowNull: false,
-        },
         address: {
             type: DataTypes.TEXT(),
             allowNull: false,

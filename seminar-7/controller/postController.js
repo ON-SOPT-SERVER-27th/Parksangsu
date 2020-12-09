@@ -31,6 +31,10 @@ module.exports = {
     },
     findAllPost: async (req, res) => {
         const { category } = req.body;
+            if (!category) {
+                console.lpg('카테고리 입력값이 없습니다.');
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+            }
         try {
             const findAllPost = await postService.findAllPost(category);
             return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_SUCCESS, findAllPost));
@@ -72,7 +76,7 @@ module.exports = {
         const { postId } = req.params;
         try {
             const findPostDetailOne = await postService.findPostDetailIdOne(postId);
-            
+
             if (!findPostDetailOne) {
                 console.log('존재하지 않는 아이디입니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));

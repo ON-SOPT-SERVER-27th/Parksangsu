@@ -33,6 +33,10 @@ module.exports = {
     FIND_POST_DETAIL_FACILITIES_SUCCESS: "포스트 디테일 편의시설 조회 성공",
     FIND_POST_DETAIL_FACILITIES_FAIL: "포스트 디테일 편의시설 조회 실패",
 
+    /* Hashtag */
+    CREATE_HASHTAG_SUCCESS: "해시태그 생성 성공",
+    CREATE_HASHTAG_FAIL: "해시태그 생성 실패",
+
     /* Banner */
     READ_BANNER_IMAGE_SUCCESS: "배너 이미지 조회 성공",
     READ_BANNER_IMAGE_FAIL: "배너 이미지 조회 실패",
