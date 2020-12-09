@@ -2,16 +2,15 @@
 
   <img height="50" width="120" src="https://user-images.githubusercontent.com/59385491/99065767-39ab4500-25eb-11eb-9490-9d2a4202dd96.png">
 
-  <br>
-  <br>
+  # 대학생 연합 IT벤처 창업 동아리 SOPT
 
-  <img height="110" width="300" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
+  <img height="300" width="300" src="https://user-images.githubusercontent.com/59385491/101639763-05546880-3a73-11eb-9091-ce057dc957bc.png">
 
-  <h2> SOPT 클라이언트 합동 세미나 </h2>
-
-<h3>공간 예약 서비스 스페이스클라우드 서버 구현</h3>
+  <h2> 🧑🏻‍💻 SOPT 클라이언트 합동 세미나 👩🏻‍💻 </h2>
+  <h4>공간 예약 서비스 스페이스클라우드 서버 구현</h4>
 
 </div>
+
 
 <br>
 
