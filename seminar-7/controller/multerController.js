@@ -7,6 +7,10 @@ const postService = require('../service/postService');
 module.exports = {
     uploadImage: async (req, res) => {
         const { location: image } = req.file;
+            if(!image) {
+                console.log('필요한 값을 넣지 않았습니다.');
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+            }
         try {
             const upload = await bannerService.uploadBannerImage(image);
             return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_IMAGE_UPLOAD_SUCCESS, upload));
