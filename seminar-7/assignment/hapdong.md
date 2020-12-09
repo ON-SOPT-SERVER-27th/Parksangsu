@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img height="50" width="120" src="https://user-images.githubusercontent.com/59385491/99065767-39ab4500-25eb-11eb-9490-9d2a4202dd96.png"> x <img height="40" width="150" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
+  <img height="50" width="120" src="https://user-images.githubusercontent.com/59385491/99065767-39ab4500-25eb-11eb-9490-9d2a4202dd96.png"> X <img height="45" width="150" src="https://user-images.githubusercontent.com/59385491/101638238-2a47dc00-3a71-11eb-9c8d-50bb156cd640.png">
 
   ## SOPT 클라이언트 합동 세미나
 
