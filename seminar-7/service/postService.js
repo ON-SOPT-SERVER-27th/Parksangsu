@@ -142,5 +142,17 @@ module.exports = {
         } catch (err) {
             throw err;
         }
-    }
+    },
+    findPostDetailSelectIdOne: async (postId) => {
+        try {
+            const findPostDetailSelectId = await PostDetailSelect.findOne({
+                where: {
+                    PostId: postId
+                }
+            })
+            return findPostDetailSelectId;
+        } catch (err) {
+            throw err;
+        }
+    },
 }

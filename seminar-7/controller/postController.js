@@ -2,6 +2,7 @@ const ut = require('../modules/util');
 const rm = require('../modules/responseMessage');
 const sc = require('../modules/statusCode');
 const postService = require('../service/postService');
+const { findPostDetailSelectIdOne } = require('../service/postService');
 
 module.exports = {
 
@@ -107,6 +108,19 @@ module.exports = {
             }            
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_DETAIL_SELECT_FAIL));
+        }
+    },
+    findPostDetailSelect: async (req, res) => {
+        const { postId } = req.params;
+        try {
+            const findPostDetailSelect = await postService.findPostDetailSelectIdOne(postId);
+            if (!findPostDetailSelect) {
+                console.log('존재하지 않는 아이디입니다.');
+                return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+            }
+            return res.status(sc.OK).send(ut.success(sc.OK, rm.FIND_POST_DETAIL_SELECT_SUCCESS, findPostDetailSelect));
+        } catch (err) {
+            return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.FIND_POST_DETAIL_SELECT_FAIL));
         }
     }
 }

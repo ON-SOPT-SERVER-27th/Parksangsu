@@ -9,12 +9,12 @@ router.post('/', upload.single('image'), postController.createPost);
 router.get('/', postController.readAllPost);
 router.get('/find', postController.findAllPost);
 
-// PostDetailSelect
-router.post('/detail/:postId/select', postController.createPostDetailSelect);
-
 // PostDetail
 router.post('/detail/:postId', upload.array('images', 5), postController.createPostDetail, multerController.uploadImages);
 router.get('/detail/:postId', postController.findPostDetail);
 
+// PostDetailSelect
+router.post('/detail/:postId/select', postController.createPostDetailSelect);
+router.get('/detail/:postId/select', postController.findPostDetailSelect);
 
 module.exports = router;
