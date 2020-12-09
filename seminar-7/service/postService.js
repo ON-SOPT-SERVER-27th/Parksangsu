@@ -30,7 +30,13 @@ module.exports = {
             const findAllPost = await Post.findAll({
                 where: {
                     category
-                }
+                },
+                attributes: { exclude : ['contents'] },
+                include: [{
+                    model: PostDetail,
+                    as: 'hashed',
+                    attributes: { exclude : ['contents', 'introducedPlace', 'openingHours', 'closedDays', 'notice', 'PostId']}
+                }]
             })
             return findAllPost
         } catch (err) {
