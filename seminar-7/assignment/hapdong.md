@@ -4,7 +4,7 @@
 
   # 대학생 연합 IT벤처 창업 동아리 SOPT
 
-  <img height="250" width="250" src="https://user-images.githubusercontent.com/59385491/101639763-05546880-3a73-11eb-9091-ce057dc957bc.png">
+  <img height="220" width="250" src="https://user-images.githubusercontent.com/59385491/101639763-05546880-3a73-11eb-9091-ce057dc957bc.png">
 
   <h2> 🧑🏻‍💻 SOPT 클라이언트 합동 세미나</h2>
   <h3>공간 예약 서비스 스페이스클라우드 서버 구현</h3>
