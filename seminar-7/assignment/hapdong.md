@@ -27,17 +27,12 @@
 
 - [API Description Link](https://github.com/ON-SOPT-SERVER-3/Parksangsu/wiki)
 
-<br>
-
 ## 🔧 Credit
 - **Language** : JavaScript
 - **Library** & Framework : Node.js
 - **Database** : AWS RDS
 - **ORM** : Sequelize
 - **Deploy** : AWS EC2
-
-<br>
-
 
 ## 💼 Database Modeling 
 
@@ -57,8 +52,6 @@ $ npm start
 ```
 
 (단, 암호 키와 같이 보안이 필요한 파일에 대해서는 Github에 업로드 되어 있지 않습니다.)
-
-<br>
 
 ## 🗂 models/index.js
 
