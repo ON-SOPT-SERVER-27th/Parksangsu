@@ -30,12 +30,13 @@ module.exports = {
         }
         try {
             const findPostDetailId = await postService.findPostDetailId(postId);
+            
             if (!findPostDetailId) {
                 console.log('포스트 id가 없습니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
             } else {
-                console.log(findPostDetailId);
-                console.log(imageUrls);
+                // console.log(findPostDetailId);
+                // console.log(imageUrls);
                 for (let i = 0; i < imageUrls.length; i++) {
                     const postDetailImageCreate = await postService.createPostDetailImage(findPostDetailId.dataValues.id, imageUrls[i]);
                 }

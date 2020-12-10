@@ -9,13 +9,13 @@ module.exports = {
     // Post API
     createPost: async (req, res) => {
         const { location: image } = req.file;
-        const { title, contents, address, price, category } = req.body;
-        if(!title || !contents || !address || !price || !category || !image) {
+        const { title, address, price, category } = req.body;
+        if(!title || !address || !price || !category || !image) {
             console.log('필요한 값을 넣지 않았습니다.');
             return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
         }
         try {
-            const postCreate = await postService.createPost(title, contents, address, price, image, category);
+            const postCreate = await postService.createPost(title, address, price, image, category);
             return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postCreate));
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_FAIL));
@@ -32,7 +32,7 @@ module.exports = {
     findAllPost: async (req, res) => {
         const { category } = req.body;
             if (!category) {
-                console.lpg('카테고리 입력값이 없습니다.');
+                console.log('카테고리 입력값이 없습니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE));
             }
         try {
@@ -45,10 +45,10 @@ module.exports = {
 
     // PostDetail API
     createPostDetail: async (req, res, next) => {
-        const { introducedPlace, openingHours, closedDays, notice } = req.body;
+        const { contents, introducedPlace, openingHours, closedDays, notice } = req.body;
         const { postId } = req.params;
             
-        if(!introducedPlace || !openingHours || !closedDays || !notice || !postId) {
+        if(!contents ||!introducedPlace || !openingHours || !closedDays || !notice || !postId) {
                 console.log('필요한 값을 넣지 않았습니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE)); 
             }
@@ -59,14 +59,16 @@ module.exports = {
                 console.log('원하는 post id값이 없습니다.')
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
             }
+            
             const findPostDetailId = await postService.findPostDetailId(postId);
+            console.log(findPostDetailId);
 
-            if (!findPostDetailId) {
-                const postDetailCreate = await postService.createPostDetail(introducedPlace, openingHours, closedDays, notice, postId);
-                res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_SUCCESS, postDetailCreate));
-            } else {
+            if (findPostDetailId) {
                 res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.DUPLICATE_VALUES));
-            }            
+            } else  {
+                const postDetailCreate = await postService.createPostDetail(contents, introducedPlace, openingHours, closedDays, notice, postId);
+                res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_POST_DETAIL_SUCCESS, postDetailCreate));
+            }       
         } catch (err) {
             return res.status(sc.INTERNAL_SERVER_ERROR).send(ut.fail(sc.INTERNAL_SERVER_ERROR, rm.CREATE_POST_DETAIL_FAIL));
         }

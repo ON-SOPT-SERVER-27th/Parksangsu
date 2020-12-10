@@ -2,11 +2,10 @@ const { Post, PostDetail, PostDetailSelect, Hashtag, Facilities, PostDetailImage
 
 module.exports = {
     // Post Service
-    createPost: async (title, contents, address, price, image, category) => {
+    createPost: async (title, address, price, image, category) => {
         try {
             const createPost = await Post.create({
                 title,
-                contents,
                 address,
                 price,
                 postImageUrl: image,
@@ -31,7 +30,6 @@ module.exports = {
                 where: {
                     category
                 },
-                attributes: { exclude : ['contents'] },
                 include: [{
                     model: PostDetail,
                     as: 'hashed',
@@ -47,9 +45,10 @@ module.exports = {
     // PostDetail Service
 
     // POST PostDetail 
-    createPostDetail: async (introducedPlace, openingHours, closedDays, notice, postId) => {
+    createPostDetail: async (contents, introducedPlace, openingHours, closedDays, notice, postId) => {
         try {
             const createPostDetail = await PostDetail.create({
+                contents,
                 introducedPlace,
                 openingHours,
                 closedDays,
@@ -87,6 +86,18 @@ module.exports = {
         }
     },
     findPostDetailId: async (postId) => {
+        try {
+            const findPostDetailId = await PostDetail.findOne({
+                where: {
+                    PostId: postId
+                }
+            })
+            return findPostDetailId
+        } catch (err) {
+            throw err;
+        }
+    },
+    findMulterPostDetailId: async (postId) => {
         try {
             const findPostDetailId = await PostDetail.findOne({
                 where: {
