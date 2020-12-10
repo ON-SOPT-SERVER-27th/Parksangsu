@@ -97,6 +97,18 @@ module.exports = {
             throw err;
         }
     },
+    findPostDetailImageId: async (postDetailId) => {
+        try {
+            const findPostDetailImageId = await PostDetailImage.findOne({
+                where: {
+                    PostDetailId: postDetailId
+                }
+            })
+            return findPostDetailImageId
+        } catch (err) {
+            throw err;
+        }
+    },
     
     // GET PostDetail
     findPostDetailIdOne: async (postId) => {

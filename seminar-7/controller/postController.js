@@ -47,21 +47,20 @@ module.exports = {
     createPostDetail: async (req, res, next) => {
         const { contents, introducedPlace, openingHours, closedDays, notice } = req.body;
         const { postId } = req.params;
-            
+        
         if(!contents ||!introducedPlace || !openingHours || !closedDays || !notice || !postId) {
                 console.log('필요한 값을 넣지 않았습니다.');
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.NULL_VALUE)); 
             }
+
         try {
             const findPostId = await postService.findPostId(postId);
-            
             if (!findPostId) {
                 console.log('원하는 post id값이 없습니다.')
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
             }
             
             const findPostDetailId = await postService.findPostDetailId(postId);
-            console.log(findPostDetailId);
 
             if (findPostDetailId) {
                 res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.DUPLICATE_VALUES));
