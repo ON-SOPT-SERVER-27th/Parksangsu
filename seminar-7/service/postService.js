@@ -97,19 +97,6 @@ module.exports = {
             throw err;
         }
     },
-    findMulterPostDetailId: async (postId) => {
-        try {
-            const findPostDetailId = await PostDetail.findOne({
-                where: {
-                    PostId: postId
-                },
-                attributes: ['id']
-            })
-            return findPostDetailId
-        } catch (err) {
-            throw err;
-        }
-    },
     
     // GET PostDetail
     findPostDetailIdOne: async (postId) => {
