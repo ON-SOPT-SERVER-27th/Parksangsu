@@ -27,6 +27,8 @@
 
 - [API Description Link](https://github.com/ON-SOPT-SERVER-3/Parksangsu/wiki)
 
+<br>
+
 ## 🔧 Credit
 - **Language** : JavaScript
 - **Library** & Framework : Node.js
@@ -34,13 +36,13 @@
 - **ORM** : Sequelize
 - **Deploy** : AWS EC2
 
+<br>
+
 ## 💼 Database Modeling 
 
 - ERD(Entity Relation Diagram)
 
 <img width="703" alt="스페이스클라우드 ERD" src="https://user-images.githubusercontent.com/59385491/101642220-1652a900-3a76-11eb-8115-d03cd7880d20.png">
-
-<br>
 
 ## 💻 Develop
 
