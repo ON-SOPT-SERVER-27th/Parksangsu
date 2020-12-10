@@ -29,11 +29,34 @@
 
 <br>
 
+## 🔧 Credit
+- **Language** : JavaScript
+- **Library** & Framework : Node.js
+- **Database** : AWS RDS
+- **ORM** : Sequelize
+- **Deploy** : AWS EC2
+
+<br>
+
+
 ## 💼 Database Modeling 
 
 - ERD(Entity Relation Diagram)
 
 <img width="703" alt="스페이스클라우드 ERD" src="https://user-images.githubusercontent.com/59385491/101642220-1652a900-3a76-11eb-8115-d03cd7880d20.png">
+
+<br>
+
+## 💻 Develop
+
+```
+$ git clone https://github.com/ON-SOPT-SERVER-3/Parksangsu.git
+$ cd [project-name]
+$ npm install
+$ npm start
+```
+
+(단, 암호 키와 같이 보안이 필요한 파일에 대해서는 Github에 업로드 되어 있지 않습니다.)
 
 <br>
 
@@ -73,8 +96,6 @@ db.Post.belongsToMany(db.PostDetail, { through: 'Hashtag', as: 'hashed', onDelet
 db.PostDetail.belongsToMany(db.Post, { through: 'Hashtag', as: 'hasher', onDelete: 'cascade' });
 ```
 
-<br>
-
 ## 🏷 config/config.json
 
 ```javascript
@@ -88,8 +109,6 @@ db.PostDetail.belongsToMany(db.Post, { through: 'Hashtag', as: 'hasher', onDelet
   }
 }
 ```
-
-<br>
 
 ## 🏷 config/s3.json
 
