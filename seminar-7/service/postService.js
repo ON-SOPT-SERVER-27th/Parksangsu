@@ -1,4 +1,4 @@
-const { Post, PostDetail, PostDetailSelect, Hashtag, Facilities, PostDetailImage } = require('../models');
+const { Post, PostDetail, PostDetailSelect, Hashtag, Facilities, PostDetailImage, PostHashtag } = require('../models');
 
 module.exports = {
     // Post Service
@@ -177,44 +177,39 @@ module.exports = {
     },
 
     // POST Facilities
-    createFacilities: async (image, contents, postId) => {
+    createFacilities: async (image, contents, postDetailId) => {
         try {
             const createFacilities = await Facilities.create({
                 iconImageUrl: image,
                 contents,
-                PostDetailId: postId
+                PostDetailId: postDetailId
             })
             return createFacilities;
         } catch (err) {
             throw err;
         }
     },
-    findFacilitiesId: async (postId) => {
-        try {
-            const findFacilitiesId = await PostDetail.findOne({
-                where: {
-                    id: postId
-                },
-                attributes: ['id']
-            })
-            return findFacilitiesId
-        } catch (err) {
-            throw err;
-        }
-    },
 
     // POST Hashtag
-    createHashtag: async (postId, postDetailId, tag) => {
+    createHashtag: async (tag) => {
         try {
             const createHashtag = await Hashtag.create({
-                PostId: postId,
-                PostDetailId: postDetailId,
                 tag
             })
             return createHashtag;
         } catch (err) {
             throw err;
         }
+    },
+    createPostHashtag: async (postId, hashtagId) => {
+        try {
+            const createPostHashtag = await PostHashtag.create({
+                PostId: postId,
+                HashtagId: hashtagId
+            })
+            return createPostHashtag;
+        } catch (err) {
+            throw err;
+        }
     }
-
 }
