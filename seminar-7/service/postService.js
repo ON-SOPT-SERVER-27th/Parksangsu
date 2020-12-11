@@ -31,9 +31,7 @@ module.exports = {
                     category
                 },
                 include: [{
-                    model: PostDetail,
-                    as: 'hashed',
-                    attributes: { exclude : ['contents', 'introducedPlace', 'openingHours', 'closedDays', 'notice', 'PostId']}
+                    model: Hashtag
                 }]
             })
             return findAllPost
