@@ -42,7 +42,7 @@
 
 - ERD(Entity Relation Diagram)
 
-<img width="703" alt="스페이스클라우드 ERD" src="https://user-images.githubusercontent.com/59385491/101642220-1652a900-3a76-11eb-8115-d03cd7880d20.png">
+<<img width="655" alt="스페이스클라우드 ERD" src="https://user-images.githubusercontent.com/59385491/101878354-c0474800-3bd2-11eb-9673-799c0a60e7f3.png">
 
 ## 💻 Develop
 
@@ -65,10 +65,10 @@ db.Facilities = require('./facilities')(sequelize, Sequelize);
 db.PostDetailSelect = require('./postDetailSelect')(sequelize, Sequelize);
 db.Hashtag = require('./hashtag')(sequelize, Sequelize);
 db.PostDetailImage = require('./postDetailImage')(sequelize, Sequelize);
+db.PostHashtag = require('./postHashtag')(sequelize, Sequelize);
 
 /* Banner */
 db.Banner = require('./banner')(sequelize, Sequelize);
-
 
 /** 1 : 1   Post : PostDetail */
 db.Post.hasOne(db.PostDetail, { onDelete: 'cascade' });
@@ -86,9 +86,13 @@ db.PostDetailImage.belongsTo(db.PostDetail);
 db.PostDetail.hasMany(db.Facilities, {onDelete: 'cascade' })
 db.Facilities.belongsTo(db.PostDetail);
 
+/** 1 : N   PostDetail : Hashtag */
+db.PostDetail.hasMany(db.Hashtag, {onDelete: 'cascade' })
+db.Hashtag.belongsTo(db.PostDetail);
+
 /** N : M   Post : PostDetail => Hashtag */
-db.Post.belongsToMany(db.PostDetail, { through: 'Hashtag', as: 'hashed', onDelete: 'cascade' });
-db.PostDetail.belongsToMany(db.Post, { through: 'Hashtag', as: 'hasher', onDelete: 'cascade' });
+db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag', onDelete: 'cascade' });
+db.Hashtag.belongsToMany(db.Post, { through: 'PostHashtag', onDelete: 'cascade' });
 ```
 
 ## 🏷 config/config.json
