@@ -41,6 +41,10 @@ db.PostDetailImage.belongsTo(db.PostDetail);
 db.PostDetail.hasMany(db.Facilities, {onDelete: 'cascade' })
 db.Facilities.belongsTo(db.PostDetail);
 
+/** 1 : N   PostDetail : Hashtag */
+db.PostDetail.hasMany(db.Hashtag, {onDelete: 'cascade' })
+db.Hashtag.belongsTo(db.PostDetail);
+
 /** N : M   Post : PostDetail => Hashtag */
 db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag', onDelete: 'cascade' });
 db.Hashtag.belongsToMany(db.Post, { through: 'PostHashtag', onDelete: 'cascade' });

@@ -123,8 +123,10 @@ module.exports = {
                     attributes: ['iconImageUrl', 'contents'] 
                 }, {
                     model: Post,
-                    as: 'hasher',
                     attributes: { exclude : ['id', 'contents', 'address', 'price', 'postImageUrl', 'category' ]}
+                }, {
+                    model: Hashtag,
+                    attributes: { exclude: ['id', 'PostDetailId']}
                 }]
             })
             return findPostDetailId;
@@ -189,10 +191,11 @@ module.exports = {
     },
 
     // POST Hashtag
-    createHashtag: async (tag) => {
+    createHashtag: async (tag, postDetailId) => {
         try {
             const createHashtag = await Hashtag.create({
-                tag
+                tag,
+                PostDetailId: postDetailId
             })
             return createHashtag;
         } catch (err) {

@@ -174,10 +174,12 @@ module.exports = {
                 console.log('원하는 post id값이 없습니다.')
                 return res.status(sc.BAD_REQUEST).send(ut.fail(sc.BAD_REQUEST, rm.FIND_POST_ID_FAIL));
             }
+            const findPostDetailId = await postService.findPostDetailId(postId);
+            let postDetailId = findPostDetailId.dataValues.id;
 
-            const createHashtag = await postService.createHashtag(tag);
+            const createHashtag = await postService.createHashtag(tag, postDetailId);
             let hashtagId = createHashtag.dataValues.id;
-            
+
             const createPostHashtag = await postService.createPostHashtag(postId, hashtagId);
             return res.status(sc.OK).send(ut.success(sc.OK, rm.CREATE_HASHTAG_SUCCESS, createHashtag));
         } catch (err) {
