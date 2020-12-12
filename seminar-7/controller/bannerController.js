@@ -8,7 +8,6 @@ module.exports = {
     readAllBanner: async (req, res) => {
         try{
             const getReadAllBanner = await bannerService.bannerReadAll();
-
             let urlList = [];
 
             for(let banner of getReadAllBanner) {
