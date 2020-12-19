@@ -25,7 +25,9 @@ db.WatchingHistory.belongsTo(db.User, { foreignKey: 'userId', targetKey: 'id'})
 
 ### ERD
 
-수정 진행중
+<img width="730" alt="ERD" src="https://user-images.githubusercontent.com/59385491/99887749-53532900-2c8a-11eb-8344-f02596c4ee20.png">
+
+- ERD에 대해서 수정할 부분 수정진행.
 
 
 ### API 명세
